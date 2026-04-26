@@ -18,15 +18,15 @@ st.markdown(
 
       html, body, [class*="css"] {
         font-family: 'IBM Plex Sans', sans-serif;
-        background-color: #0d0d0d;
-        color: #e8e0d0;
+        background-color: #101827;
+        color: #fce7f3;
       }
       #MainMenu {visibility: hidden;}
       footer {visibility: hidden;}
 
       .hero {
-        background: linear-gradient(135deg, #1a1a1a 0%, #111 60%, #1f1400 100%);
-        border-bottom: 2px solid #f5a623;
+        background: linear-gradient(135deg, #111827 0%, #1e1b4b 55%, #831843 100%);
+        border-bottom: 2px solid #f9a8d4;
         padding: 2rem 2.5rem 1.5rem;
         margin-bottom: 1.5rem;
       }
@@ -34,23 +34,23 @@ st.markdown(
         font-family: 'Bebas Neue', sans-serif;
         font-size: 4rem;
         letter-spacing: .12em;
-        color: #f5a623;
+        color: #f9a8d4;
         margin: 0 0 .25rem;
         line-height: 1;
       }
       .hero p {
         font-family: 'IBM Plex Mono', monospace;
         font-size: .8rem;
-        color: #888;
+        color: #f9a8d4;
         margin: 0;
         letter-spacing: .08em;
       }
 
       .metric-card {
         flex: 1;
-        background: #161616;
-        border: 1px solid #2a2a2a;
-        border-top: 3px solid #f5a623;
+        background: #1e293b;
+        border: 1px solid #334155;
+        border-top: 3px solid #f9a8d4;
         padding: 1rem 1.25rem;
         border-radius: 2px;
       }
@@ -65,7 +65,7 @@ st.markdown(
       .metric-card .value {
         font-family: 'Bebas Neue', sans-serif;
         font-size: 2.2rem;
-        color: #f5a623;
+        color: #f9a8d4;
         line-height: 1;
       }
       .metric-card .sub {
@@ -79,23 +79,23 @@ st.markdown(
         font-size: .7rem;
         letter-spacing: .2em;
         text-transform: uppercase;
-        color: #f5a623;
+        color: #f9a8d4;
         border-bottom: 1px solid #2a2a2a;
         padding-bottom: .4rem;
         margin-bottom: 1rem;
       }
 
       section[data-testid="stSidebar"] {
-        background: #111 !important;
-        border-right: 1px solid #2a2a2a;
+      background: #111827 !important;
+      border-right: 1px solid #334155;
       }
       section[data-testid="stSidebar"] * { color: #e8e0d0 !important; }
 
       .js-plotly-plot { border: 1px solid #1e1e1e; border-radius: 2px; }
 
       .insight {
-        background: #1a1400;
-        border-left: 3px solid #f5a623;
+        background: #1e1b4b;
+        border-left: 3px solid #f9a8d4;
         padding: .6rem 1rem;
         font-size: .8rem;
         color: #aaa;
@@ -108,10 +108,10 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-CARD_BG   = "#161616"
-AMBER     = "#f5a623"
-GRID_CLR  = "#222222"
-TEXT_CLR  = "#e8e0d0"
+CARD_BG   = "#1e293b"
+AMBER     = "#f9a8d4"
+GRID_CLR  = "#334155"
+TEXT_CLR  = "#fce7f3"
 
 PLOT_LAYOUT = dict(
     paper_bgcolor=CARD_BG,
@@ -123,7 +123,12 @@ PLOT_LAYOUT = dict(
     margin=dict(l=50, r=30, t=55, b=50),
 )
 
-ORIGIN_PALETTE = {"usa": "#f5a623", "europe": "#4db8ff", "japan": "#ff6b6b"}
+ORIGIN_PALETTE = {
+    "usa": "#f9a8d4",
+    "europe": "#93c5fd",
+    "japan": "#c084fc"
+}
+
 ORIGIN_ES = {"usa": "EE.UU.", "europe": "Europa", "japan": "Japón"}
 
 @st.cache_data
@@ -349,7 +354,7 @@ with col_box:
                 name=origen_es,
                 marker_color=ORIGIN_PALETTE.get(origin, "#aaa"),
                 line_color=ORIGIN_PALETTE.get(origin, "#aaa"),
-                fillcolor={"usa": "rgba(245,166,35,0.15)", "europe": "rgba(77,184,255,0.15)", "japan": "rgba(255,107,107,0.15)"}.get(origin, "rgba(170,170,170,0.15)"),
+                fillcolor={"usa": "rgba(249,168,212,0.18)", "europe": "rgba(147,197,253,0.18)", "japan": "rgba(192,132,252,0.18)"}.get(origin, "rgba(170,170,170,0.15)"),
                 boxmean="sd",
             )
         )
